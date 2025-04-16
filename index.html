@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CineTech - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lien vers Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+    <!-- Header avec barre de navigation -->
+    <header>
+        <div class="logo">
+            <a href="index.html">CineTech</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="favoris.html">Favoris</a></li>
+            </ul>
+        </nav>
+        <!-- Barre de recherche -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Rechercher un film, une série...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+            <div id="autocomplete-results" class="autocomplete"></div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <!-- Section Hero (bannière d'accroche) -->
+        <section class="hero">
+            <h1>Bienvenue sur CineTech</h1>
+            <p>Découvrez notre collection de films et séries</p>
+        </section>
+
+        <!-- Section Films populaires -->
+        <section class="popular-section">
+            <h2><i class="fas fa-film"></i> Films populaires</h2>
+            <div id="popular-movies" class="grid-container">
+                <!-- Les films seront injectés ici par JavaScript -->
+            </div>
+            <a href="films.html" class="see-all">Voir tous les films →</a>
+        </section>
+
+        <!-- Section Séries populaires -->
+        <section class="popular-section">
+            <h2><i class="fas fa-tv"></i> Séries populaires</h2>
+            <div id="popular-tvshows" class="grid-container">
+                <!-- Les séries seront injectées ici par JavaScript -->
+            </div>
+            <a href="series.html" class="see-all">Voir toutes les séries →</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 CineTech - Projet utilisant l'API TMDB</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts JS -->
+    <script src="js/api.js"></script> <!-- Pour les appels API -->
+    <script src="js/ui.js"></script>  <!-- Pour la manipulation du DOM -->
+    <script src="js/main.js"></script> <!-- Script principal -->
+
+    <!-- Exemple de script pour charger les données (à adapter) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Charger les films et séries populaires
+            loadPopularMovies();
+            loadPopularTVShows();
+
+            // Configurer la recherche
+            setupSearch();
+        });
+    </script>
 </body>
 </html>
