@@ -3,85 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineTech - Accueil</title>
+    <title>Cinetech - Détail des Films et Séries</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Lien vers Font Awesome pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header avec barre de navigation -->
     <header>
-        <div class="logo">
-            <a href="index.html">CineTech</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="films.html">Films</a></li>
-                <li><a href="series.html">Séries</a></li>
-                <li><a href="favoris.html">Favoris</a></li>
-            </ul>
-        </nav>
-        <!-- Barre de recherche -->
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Rechercher un film, une série...">
-            <button id="search-button"><i class="fas fa-search"></i></button>
-            <div id="autocomplete-results" class="autocomplete"></div>
-        </div>
+        <h1>Cinetech</h1>
+        <input type="text" id="searchInput" placeholder="Rechercher un film ou une série..." autocomplete="off">
+        <div id="categories"></div>
     </header>
 
-    <!-- Contenu principal -->
     <main>
-        <!-- Section Hero (bannière d'accroche) -->
-        <section class="hero">
-            <h1>Bienvenue sur CineTech</h1>
-            <p>Découvrez notre collection de films et séries</p>
+        <!-- Détail d'un film ou série -->
+        <section id="detailSection">
+            <div id="detailContent">
+                <!-- Détails dynamiques de films et séries seront insérés ici -->
+            </div>
+            <section id="commentsSection">
+                <h2>Commentaires</h2>
+                <div id="commentsList"></div>
+                <textarea id="commentInput" placeholder="Laissez un commentaire"></textarea>
+                <button id="submitComment">Publier un commentaire</button>
+            </section>
         </section>
 
-        <!-- Section Films populaires -->
-        <section class="popular-section">
-            <h2><i class="fas fa-film"></i> Films populaires</h2>
-            <div id="popular-movies" class="grid-container">
-                <!-- Les films seront injectés ici par JavaScript -->
-            </div>
-            <a href="films.html" class="see-all">Voir tous les films →</a>
+        <section id="moviesSection">
+            <h2>Films</h2>
+            <div id="moviesList"></div>
+            <button id="loadMoreMovies">Charger plus de films</button>
         </section>
 
-        <!-- Section Séries populaires -->
-        <section class="popular-section">
-            <h2><i class="fas fa-tv"></i> Séries populaires</h2>
-            <div id="popular-tvshows" class="grid-container">
-                <!-- Les séries seront injectées ici par JavaScript -->
-            </div>
-            <a href="series.html" class="see-all">Voir toutes les séries →</a>
+        <section id="tvShowsSection">
+            <h2>Séries</h2>
+            <div id="tvShowsList"></div>
+            <button id="loadMoreTvShows">Charger plus de séries</button>
+        </section>
+
+        <section id="favoritesSection">
+            <h2>Mes Favoris</h2>
+            <div id="favoritesList"></div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2023 CineTech - Projet utilisant l'API TMDB</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </footer>
-
-    <!-- Scripts JS -->
-    <script src="js/api.js"></script> <!-- Pour les appels API -->
-    <script src="js/ui.js"></script>  <!-- Pour la manipulation du DOM -->
-    <script src="js/main.js"></script> <!-- Script principal -->
-
-    <!-- Exemple de script pour charger les données (à adapter) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Charger les films et séries populaires
-            loadPopularMovies();
-            loadPopularTVShows();
-
-            // Configurer la recherche
-            setupSearch();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
