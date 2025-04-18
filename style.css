@@ -2,12 +2,15 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #0e0d0d;
 }
 
 header {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 19px;
+    color: white;
+    font-style: italic;
 }
 
 #searchInput {
@@ -24,7 +27,7 @@ header {
 #filters button {
     padding: 10px 20px;
     margin: 5px;
-    background-color: #007BFF;
+    background-color: #011020;
     color: white;
     border: none;
     cursor: pointer;
@@ -38,7 +41,7 @@ button {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #0b1f35;
     color: white;
     border: none;
     cursor: pointer;
@@ -60,7 +63,7 @@ button:hover {
     background-color: white;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(233, 198, 198, 0.1);
     text-align: center;
 }
 
@@ -76,7 +79,7 @@ button:hover {
 
 .movie-item p, .tvshow-item p, .favorite-item p {
     font-size: 14px;
-    color: #555;
+    color: #efe2e2;
 }
 
 #detailSection {
@@ -85,7 +88,7 @@ button:hover {
     background-color: white;
     margin-bottom: 30px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(219, 212, 212, 0.1);
 }
 
 #detailSection img {
