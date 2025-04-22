@@ -134,6 +134,7 @@ const addComment = (itemId, type, text) => {
         itemId,
         type,
         user: 'Utilisateur',  
+        text
     });
     localStorage.setItem('comments', JSON.stringify(comments));
 };
