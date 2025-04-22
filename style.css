@@ -10,7 +10,7 @@ header {
     margin-bottom: 20px;
     font-size: 19px;
     color: white;
-    font-style: italic;
+    font-family: italic;
 }
 
 #searchInput {
@@ -128,4 +128,28 @@ button:hover {
 #submitComment:hover {
     background-color: #0056b3;
 }
+
+h2{
+    font-size: larger;
+    color: #efe2e2;
+    font-family: italic;
+    
+}
+
+    img:h2{
+        opacity: 0.7;
+        transition: 0.3s;
+      }
+      
+
+.nav-btn{
+    
+        display: flex;
+        justify-content: space-between; /* ou space-around, center, etc. */
+        align-items: center;
+        margin: 0; /* Pour éviter les marges automatiques des titres */
+      }
+      
+
+
 

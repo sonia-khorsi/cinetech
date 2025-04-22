@@ -9,15 +9,26 @@
 <body>
     <header>
         <h1>Cinetech</h1>
-        <input type="text" id="searchInput" placeholder="Rechercher un film ou une série..." autocomplete="off">
+        <header>
+            
+            <nav>
+
+                <button class="nav-btn" data-page="home">Accueil</button>
+                <button class="nav-btn" data-page="movies">Films</button>
+                <button class="nav-btn" data-page="tv">Séries</button>
+                <button class="nav-btn" data-page="favorites">Favoris</button>
+            </nav>
+            <input type="text" id="searchInput" placeholder="Rechercher un film ou une série..." autocomplete="off">
+        </header>
+       
         <div id="categories"></div>
     </header>
 
     <main>
-        <!-- Détail d'un film ou série -->
+       
         <section id="detailSection">
             <div id="detailContent">
-                <!-- Détails dynamiques de films et séries seront insérés ici -->
+               
             </div>
             <section id="commentsSection">
                 <h2>Commentaires</h2>

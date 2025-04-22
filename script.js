@@ -1,11 +1,11 @@
-const API_KEY = '13d74b96235f1af19b629d1366c8d1a0'; // Remplacez par votre clé API TMDB
-const BASE_URL = 'https://api.themoviedb.org/3'; // URL de base de l'API
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; // URL de base pour les images des films et séries
+const API_KEY = '13d74b96235f1af19b629d1366c8d1a0'; 
+const BASE_URL = 'https://api.themoviedb.org/3'; 
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 let pageMovies = 1;
 let pageTvShows = 1;
 
-// Récupérer les films populaires
+
 const fetchPopularMovies = async () => {
     try {
         const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${pageMovies}`);
@@ -16,7 +16,7 @@ const fetchPopularMovies = async () => {
     }
 };
 
-// Récupérer les séries populaires
+
 const fetchPopularTvShows = async () => {
     try {
         const response = await fetch(`${BASE_URL}/tv/popular?api_key=${API_KEY}&page=${pageTvShows}`);
@@ -27,7 +27,7 @@ const fetchPopularTvShows = async () => {
     }
 };
 
-// Affichage des films
+
 const displayMovies = (movies) => {
     const moviesList = document.getElementById('moviesList');
     moviesList.innerHTML = '';
@@ -43,14 +43,14 @@ const displayMovies = (movies) => {
         `;
         moviesList.appendChild(movieItem);
 
-        // Ajouter un gestionnaire d'événements pour le bouton de détail
+        
         movieItem.querySelector('.detail-btn').addEventListener('click', () => showDetails(movie.id, 'movie'));
-        // Ajouter un gestionnaire d'événements pour le bouton des favoris
+      
         movieItem.querySelector('.fav-btn').addEventListener('click', () => addToFavorites(movie));
     });
 };
 
-// Affichage des séries
+
 const displayTvShows = (tvShows) => {
     const tvShowsList = document.getElementById('tvShowsList');
     tvShowsList.innerHTML = '';
@@ -66,14 +66,14 @@ const displayTvShows = (tvShows) => {
         `;
         tvShowsList.appendChild(tvShowItem);
 
-        // Ajouter un gestionnaire d'événements pour le bouton de détail
+        
         tvShowItem.querySelector('.detail-btn').addEventListener('click', () => showDetails(tvShow.id, 'tv'));
-        // Ajouter un gestionnaire d'événements pour le bouton des favoris
+       
         tvShowItem.querySelector('.fav-btn').addEventListener('click', () => addToFavorites(tvShow));
     });
 };
 
-// Fonction pour afficher les détails d'un film ou d'une série
+
 const showDetails = async (id, type) => {
     const detailSection = document.getElementById('detailSection');
     const detailContent = document.getElementById('detailContent');
@@ -100,7 +100,7 @@ const showDetails = async (id, type) => {
         </div>
     `;
     
-    // Afficher les commentaires précédents (si disponibles)
+    
     commentsList.innerHTML = '';
     const comments = JSON.parse(localStorage.getItem('comments')) || [];
     const filteredComments = comments.filter(comment => comment.itemId === id && comment.type === type);
@@ -112,34 +112,33 @@ const showDetails = async (id, type) => {
         commentsList.appendChild(commentItem);
     });
     
-    // Afficher la section de détail
+ 
     detailSection.style.display = 'block';
     
-    // Gestion du formulaire de commentaire
+   
     const submitComment = document.getElementById('submitComment');
     submitComment.addEventListener('click', () => {
         const commentText = document.getElementById('commentInput').value;
         if (commentText) {
             addComment(id, type, commentText);
             document.getElementById('commentInput').value = '';
-            showDetails(id, type); // Actualiser la section des commentaires
+            showDetails(id, type); 
         }
     });
 };
 
-// Ajouter un commentaire dans le localStorage
+
 const addComment = (itemId, type, text) => {
     const comments = JSON.parse(localStorage.getItem('comments')) || [];
     comments.push({
         itemId,
         type,
-        user: 'Utilisateur',  // En fonction de votre système d'authentification, vous pouvez récupérer le nom de l'utilisateur
-        text
+        user: 'Utilisateur',  
     });
     localStorage.setItem('comments', JSON.stringify(comments));
 };
 
-// Ajouter un film ou une série aux favoris
+
 const addToFavorites = (item) => {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if (!favorites.find(fav => fav.id === item.id)) {
@@ -164,12 +163,12 @@ const displayFavorites = (favorites) => {
         `;
         favoritesList.appendChild(favoriteItem);
 
-        // Ajouter un gestionnaire d'événements pour le bouton de suppression des favoris
+       
         favoriteItem.querySelector('.remove-btn').addEventListener('click', () => removeFromFavorites(item.id));
     });
 };
 
-// Supprimer un film ou une série des favoris
+
 const removeFromFavorites = (id) => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites = favorites.filter(fav => fav.id !== id);
@@ -177,6 +176,6 @@ const removeFromFavorites = (id) => {
     displayFavorites(favorites);
 };
 
-// Charger les films populaires et séries au démarrage
+
 fetchPopularMovies();
 fetchPopularTvShows();
