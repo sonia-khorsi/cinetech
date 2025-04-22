@@ -13,10 +13,16 @@
             
             <nav>
 
-                <button class="nav-btn" data-page="home">Accueil</button>
-                <button class="nav-btn" data-page="movies">Films</button>
-                <button class="nav-btn" data-page="tv">Séries</button>
-                <button class="nav-btn" data-page="favorites">Favoris</button>
+                <button class="nav-btn" data-page="home"href=>Accueil</button>
+                <button class="nav-btn" data-page="movies">
+                    <a href="#moviesSection"> Films </a>  
+                </button>
+                <button class="nav-btn" data-page="tv">
+                    <a href="#tvShowsSection"> Séries </a>
+                </button>
+                <button class="nav-btn" data-page="favorites">
+                    <a href="#favoritesSection"> Favoris </a>
+                </button>
             </nav>
             <input type="text" id="searchInput" placeholder="Rechercher un film ou une série..." autocomplete="off">
         </header>
@@ -29,6 +35,7 @@
         <section id="detailSection">
             <div id="detailContent">
                
+
             </div>
             <section id="commentsSection">
                 <h2>Commentaires</h2>

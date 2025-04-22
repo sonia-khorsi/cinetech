@@ -148,6 +148,9 @@ h2{
         justify-content: space-between; /* ou space-around, center, etc. */
         align-items: center;
         margin: 0; /* Pour éviter les marges automatiques des titres */
+        a{
+            text-decoration :none;
+        }
       }
       
 
